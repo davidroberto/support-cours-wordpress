@@ -12,7 +12,7 @@
 <body>
 
 <header>
-	Je suis le header
+	<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 </header>
 
 <main>
