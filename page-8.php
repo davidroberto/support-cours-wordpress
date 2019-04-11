@@ -1,0 +1,1 @@
+template pour la page des mentions légales
