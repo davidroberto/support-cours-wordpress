@@ -2,19 +2,24 @@
 
 je suis le single.php
 
-<?php if ( have_posts() ) : ?>
+<article style="background-color: <?php the_field('couleur'); ?>">
 
-	<?php while ( have_posts() ) : the_post();?>
+    <?php if ( have_posts() ) : ?>
 
-        <article>
-            <p><?php the_title(); ?></p>
-            <div>
-                <?php the_content(); ?>
-            </div>
-        </article>
+        <?php while ( have_posts() ) : the_post();?>
 
-	<?php endwhile; ?>
+            <article>
+                <p><?php the_title(); ?></p>
+                <p><?php the_field('sous-titre');?></p>
+                <div>
+                    <?php the_content(); ?>
+                </div>
+            </article>
 
-<?php endif; ?>
+        <?php endwhile; ?>
+
+    <?php endif; ?>
+
+</article>
 
 <?php get_footer(); ?>
