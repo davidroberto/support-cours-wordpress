@@ -1,17 +1,18 @@
 <?php get_header(); ?>
 
-<h1>Tous les articles du blog : </h1>
+<h1>Les articles liés à la catégorie Moto : </h1>
 
 <?php
 
 $args = [
-    'post-type' => 'post'
+    'post-type' => 'post',
+    'cat' => 5
 ];
 
-$the_query = new WP_Query( $args );
+$the_query = new WP_Query( $args ); ?>
 
-if ( $the_query->have_posts() ) {
-    while ( $the_query->have_posts() ) { $the_query->the_post(); ?>
+<?php if ( $the_query->have_posts() ) { ?>
+	<?php while ( $the_query->have_posts() ) { $the_query->the_post(); ?>
 
         <h2><?php the_title(); ?></h2>
 
