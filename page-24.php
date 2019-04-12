@@ -1,12 +1,11 @@
 <?php get_header(); ?>
 
-<h1>Les articles liés à la catégorie Moto : </h1>
+<h1>Les events : </h1>
 
 <?php
 
 $args = [
-    'post-type' => 'post',
-    'cat' => 5
+    'post_type' => 'events'
 ];
 
 $the_query = new WP_Query( $args ); ?>
@@ -19,3 +18,5 @@ $the_query = new WP_Query( $args ); ?>
     <?php } ?>
 
 <?php } ?>
+
+<?php wp_reset_query() ?>
