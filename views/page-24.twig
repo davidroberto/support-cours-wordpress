@@ -4,6 +4,9 @@
 
 {% for event in events %}
      <h2>{{ event.title }}</h2>
+
+    <!-- affichage d'un champs ACF -->
+     {{ event.get_field('date') }}
 {% endfor %}
 
 {% include 'footer.twig' %}

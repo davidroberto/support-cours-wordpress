@@ -12,3 +12,12 @@ function dr_register_my_menu() {
 }
 
 add_action( 'init', 'dr_register_my_menu' );
+
+// Permet d'ajouter le menu au context sur tous les fichiers twig
+function dr_add_to_context( $context ) {
+	$context['menu'] = new \Timber\Menu( 'header' );
+
+	return $context;
+}
+
+add_filter( 'timber/context', 'dr_add_to_context' );
