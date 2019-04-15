@@ -1,30 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+{% include 'header.twig' %}
 
-    <!-- équivalent de <?php wp_head(); ?> qui permet à wordpress de charger le css enregistré dans functions.php-->
-    {{ function('wp_head') }}
-
-</head>
-<body>
 {% for post in posts %}
     <a href="{{ post.link }}">
         <h1>{{ post.title }}</h1>
     </a>
 {% endfor %}
 
-<footer>
-    je suis le footer
-</footer>
-<!-- équivalent de <?php wp_footer(); ?> qui permet à wordpress de charger le js-->
-{{ function('wp_footer') }}
-</body>
-
-</html>
+{% include 'footer.twig' %}
 
 
