@@ -1,26 +1,8 @@
-<?php get_header(); ?>
+<?php
 
-je suis le single.php
 
-<article style="background-color: <?php the_field('couleur'); ?>">
+// on récupère les données du post actuel
+$context['post'] = new Timber\Post();
 
-    <?php if ( have_posts() ) : ?>
-
-        <?php while ( have_posts() ) : the_post();?>
-
-            <article>
-
-                <p><?php the_title(); ?></p>
-                <p><?php the_field('sous-titre');?></p>
-                <div>
-                    <?php the_content(); ?>
-                </div>
-            </article>
-
-        <?php endwhile; ?>
-
-    <?php endif; ?>
-
-</article>
-
-<?php get_footer(); ?>
+// on appelle le fichier twig single et on lui envoie les données de la variable $context
+Timber::render('views/single.twig', $context);

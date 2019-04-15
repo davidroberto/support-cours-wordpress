@@ -1,1 +1,5 @@
-{{ hello }}
+{% for post in posts %}
+    <a href="{{ post.link }}">
+        <h1>{{ post.title }}</h1>
+    </a>
+{% endfor %}
