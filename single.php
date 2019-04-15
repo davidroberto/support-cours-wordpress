@@ -9,6 +9,7 @@ je suis le single.php
         <?php while ( have_posts() ) : the_post();?>
 
             <article>
+
                 <p><?php the_title(); ?></p>
                 <p><?php the_field('sous-titre');?></p>
                 <div>
