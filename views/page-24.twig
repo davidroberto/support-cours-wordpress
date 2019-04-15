@@ -1,0 +1,11 @@
+{% include 'header.twig' %}
+
+<h1>Tous les évènements :</h1>
+
+{% for event in events %}
+     <h2>{{ event.title }}</h2>
+{% endfor %}
+
+{% include 'footer.twig' %}
+
+
